@@ -1,0 +1,13 @@
+{% extends 'basestudent/base.html' %}
+
+{% block title %}
+Test
+{% endblock %}
+
+{% block content %}
+{% for student in students %}
+    {{ student.showGroup }}
+{% endfor %}
+
+
+{% endblock %}

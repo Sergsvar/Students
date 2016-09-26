@@ -1,0 +1,24 @@
+{% extends 'basestudent/base.html' %}
+
+{% block title %}
+Список групп
+{% endblock %}
+
+{% block content %}
+<table cellpadding="5" cellspacing="5" border="1" bordercolor="black">
+  <tr>
+    <td>название</td>
+    <td>кол-во в группе</td>
+    <td>староста</td>
+  </tr>
+  {% for group in groups %}
+      <tr>
+      <td>{{ group.group_name }}</td>
+      <td>{{ group.getSumStudents }}</td>
+      <td>{{ group.getStarosta }}</td>
+      </tr>
+
+  {% endfor %}
+</table>
+
+{% endblock %}
