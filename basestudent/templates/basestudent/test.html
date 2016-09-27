@@ -5,8 +5,8 @@ Test
 {% endblock %}
 
 {% block content %}
-{% for student in students %}
-    {{ student.showGroup }}
+{% for group in groups %}
+    <p>{{ group.showStudents }}</p>
 {% endfor %}
 
 

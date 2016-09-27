@@ -12,8 +12,11 @@ class Student(models.Model):
     ticket_number = models.CharField(max_length=15)
     student_group = models.ForeignKey('Group', null=True, blank=True, verbose_name=u'Группа, к которой прикреплен студент')
 
+
     def showGroup(self):
-        print(self.student_group)
+        for i in Group.objects.all():
+            if i.starosta_id==self.id:
+                return self.last_name
 
     class Meta:
         verbose_name_plural = "Студенты"
@@ -26,14 +29,24 @@ class Group(models.Model):
         verbose_name_plural = 'Группы'
     def getSumStudents(self):
         self.res = 0
-        self.students = Student.objects.all()
-        for stud in self.students:
+        students = Student.objects.all()
+        for stud in students:
             if stud.student_group_id==self.id:
                 self.res+=1
         return self.res
 
     def getStarosta(self):
-        return self.starosta_id
+        for i in Student.objects.all():
+            if self.starosta_id==i.id:
+                return i.__str__()
+
+    def showStudents(self):
+        alll = []
+        for i in Student.objects.all():
+            if self.id==i.student_group_id:
+                alll.append(i.__str__())
+        return alll
+
 
 
     def __str__(self):

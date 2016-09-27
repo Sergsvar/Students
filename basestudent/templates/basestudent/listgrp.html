@@ -13,7 +13,7 @@
   </tr>
   {% for group in groups %}
       <tr>
-      <td>{{ group.group_name }}</td>
+      <td><a href="/editgroup/{{group.id}}">{{ group.group_name }}</a></td>
       <td>{{ group.getSumStudents }}</td>
       <td>{{ group.getStarosta }}</td>
       </tr>

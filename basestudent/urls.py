@@ -21,5 +21,6 @@ from basestudent import views
 urlpatterns = [
     url(r'^$', basestudent.views.home, name='home'),
     url(r'^listgrp/', basestudent.views.listgrp, name='listgrp'),
-    url(r'^test/', basestudent.views.test, name='test')
+    url(r'^test/', basestudent.views.test, name='test'),
+    url(r'^editgroup/(?P<group_id>[0-9]+)/$', basestudent.views.show_group, name='show_group')
 ]
