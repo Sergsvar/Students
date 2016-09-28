@@ -23,7 +23,7 @@ class Student(models.Model):
     def __str__(self):
         return self.last_name+' '+self.first_name+' '+self.father_name
 class Group(models.Model):
-    group_name = models.CharField(max_length=22)
+    group_name = models.CharField(max_length=22,verbose_name=u'Название группы')
     starosta = models.ForeignKey('Student',null=True, blank=True, verbose_name=u'Староста', related_name='student')
     class Meta:
         verbose_name_plural = 'Группы'

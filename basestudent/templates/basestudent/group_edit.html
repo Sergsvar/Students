@@ -1,0 +1,13 @@
+{% extends 'basestudent/base.html' %}
+
+{% block title %}
+Добавление группы
+{% endblock %}
+
+{% block content %}
+<H1>Новая группа</H1>
+    <form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Сохранить</button>
+    </form>
+{% endblock %}

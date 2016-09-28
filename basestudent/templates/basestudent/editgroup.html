@@ -1,0 +1,11 @@
+{% extends 'basestudent/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    {% for i in groups.showStudents %}
+        <p>{{ i }}</p>
+    {% endfor %}
+    <a href="/editgroup/new/{{ groups.id }}" class="top-menu"><span class="glyphicon glyphicon-plus">Добавить</span></a>
+{% endblock %}
